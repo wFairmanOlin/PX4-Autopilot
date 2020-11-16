@@ -33,6 +33,7 @@
 
 #include <px4_platform_common/init.h>
 #include <px4_platform_common/px4_config.h>
+#include <px4_platform_common/px4_manifest.h>
 #include <px4_platform_common/console_buffer.h>
 #include <px4_platform_common/defines.h>
 #include <drivers/drv_hrt.h>
@@ -107,6 +108,8 @@ int px4_platform_init(void)
 	}
 
 	hrt_init();
+
+	px4_mft_configure();
 
 	param_init();
 
