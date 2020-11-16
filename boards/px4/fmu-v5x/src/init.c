@@ -70,6 +70,8 @@
 #include <systemlib/px4_macros.h>
 #include <px4_arch/io_timer.h>
 #include <px4_platform_common/init.h>
+#include <px4_platform_common/px4_manifest.h>
+#include "px4_platform_common/mtd_manifest.h"
 #include <px4_platform/gpio.h>
 #include <px4_platform/board_determine_hw_info.h>
 #include <px4_platform/board_dma_alloc.h>
@@ -223,6 +225,8 @@ __EXPORT int board_app_initialize(uintptr_t arg)
 	VDD_3V3_SPEKTRUM_POWER_EN(true);
 
 	/* Need hrt running before using the ADC */
+
+	board_get_manifest();
 
 	px4_platform_init();
 
