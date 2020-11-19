@@ -185,11 +185,7 @@ pushd "$rootfs" >/dev/null
 # Do not exit on failure now from here on because we want the complete cleanup
 set +e
 
-if [[ ${model} == test_* ]] || [[ ${model} == *_generated ]]; then
-	sitl_command="\"$sitl_bin\" $no_pxh \"$src_path\"/ROMFS/px4fmu_test -s \"${src_path}\"/posix-configs/SITL/init/test/${model} -t \"$src_path\"/test_data"
-else
-	sitl_command="\"$sitl_bin\" $no_pxh \"$build_path\"/etc -s etc/init.d-posix/rcS -t \"$src_path\"/test_data"
-fi
+sitl_command="\"$sitl_bin\" $no_pxh \"$build_path\"/etc -s etc/init.d-posix/rcS -t \"$src_path\"/test_data"
 
 echo SITL COMMAND: $sitl_command
 
@@ -215,7 +211,23 @@ elif [ "$debugger" == "ide" ]; then
 	echo "######################################################################"
 	read
 else
-	eval $sitl_command
+
+	# run within GDB if available
+	if gdb --version >/dev/null 2>&1; then
+		gdb --cd=$build_path --nx --nh --silent \
+			-ex="handle SIGCONT nostop noprint nopass" \
+			-ex="handle SIG32 nostop noprint nopass" \
+			-ex="set pagination off" \
+			-ex="set print pretty" \
+			-ex="set print thread-events off" \
+			-ex="run" \
+			-ex="thread apply all bt" \
+			-ex="quit" \
+			--args $sitl_bin $build_path/etc -s etc/init.d-posix/rcS
+
+	else
+		eval $sitl_command
+	fi
 fi
 
 popd >/dev/null
