@@ -21,7 +21,7 @@ px4_add_board(
 		camera_capture
 		camera_trigger
 		differential_pressure # all available differential pressure drivers
-		#distance_sensor # all available distance sensor drivers
+		distance_sensor # all available distance sensor drivers
 		dshot
 		gps
 		#heater
@@ -48,7 +48,7 @@ px4_add_board(
 		telemetry # all available telemetry drivers
 		test_ppm
 		#tone_alarm
-		uavcan
+		#uavcan
 	MODULES
 		airspeed_selector
 		attitude_estimator_q
@@ -112,7 +112,7 @@ px4_add_board(
 	EXAMPLES
 		fake_gyro
 		fake_magnetometer
-		fixedwing_control # Tutorial code from https://px4.io/dev/example_fixedwing_control
+		#fixedwing_control # Tutorial code from https://px4.io/dev/example_fixedwing_control
 		gyro_fft
 		hello
 		hwtest # Hardware test
@@ -120,6 +120,6 @@ px4_add_board(
 		px4_mavlink_debug # Tutorial code from http://dev.px4.io/en/debug/debug_values.html
 		px4_simple_app # Tutorial code from http://dev.px4.io/en/apps/hello_sky.html
 		rover_steering_control # Rover example app
-		uuv_example_app
+		#uuv_example_app
 		work_item
 	)

@@ -232,7 +232,9 @@ static struct sdio_dev_s *sdio;
 
 __EXPORT int board_app_initialize(uintptr_t arg)
 {
+	stm32_spiinitialize();
 	px4_platform_init();
+
 
 	// Configure the DMA allocator.
 	if (board_dma_alloc_init() < 0) {
