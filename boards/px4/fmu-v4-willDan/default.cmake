@@ -21,10 +21,10 @@ px4_add_board(
 		camera_capture
 		camera_trigger
 		differential_pressure # all available differential pressure drivers
-		distance_sensor # all available distance sensor drivers
+		#distance_sensor # all available distance sensor drivers
 		dshot
 		gps
-		heater
+		#heater
 		#imu # all available imu drivers
 		imu/bosch/bmi088
 		irlock
@@ -42,12 +42,12 @@ px4_add_board(
 		pwm_out_sim
 		pwm_out
 		rc_input
-		roboclaw
-		safety_button
+		#roboclaw
+		#safety_button
 		tap_esc
 		telemetry # all available telemetry drivers
 		test_ppm
-		tone_alarm
+		#tone_alarm
 		uavcan
 	MODULES
 		airspeed_selector

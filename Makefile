@@ -260,6 +260,7 @@ px4fmu_firmware: \
 	check_px4_fmu-v2_default \
 	check_px4_fmu-v3_default \
 	check_px4_fmu-v4_default \
+	check willDan_fmu-v4-willDan-default \
 	check_px4_fmu-v4pro_default \
 	check_px4_fmu-v5_default \
 	check_px4_fmu-v5x_default \

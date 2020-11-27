@@ -193,7 +193,7 @@ stm32_boardinitialize(void)
 
 
 	// Safety - led on in led driver.
-	stm32_configgpio(GPIO_BTN_SAFETY);
+//	stm32_configgpio(GPIO_BTN_SAFETY);
 	stm32_configgpio(GPIO_PPM_IN);
 
 	// Configure SPI all interfaces GPIO & enable power.
@@ -267,7 +267,7 @@ __EXPORT int board_app_initialize(uintptr_t arg)
 	}
 
 	// Power down the heater.
-	stm32_gpiowrite(GPIO_HEATER_OUTPUT, 0);
+	//stm32_gpiowrite(GPIO_HEATER_OUTPUT, 0);
 
 	// Configure SPI-based devices.
 	spi1 = stm32_spibus_initialize(1);
@@ -306,7 +306,6 @@ __EXPORT int board_app_initialize(uintptr_t arg)
 
 
 
-#endif /* defined(CONFIG_STM32_SPI4) */
 
 
 #ifdef CONFIG_MMCSD

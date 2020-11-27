@@ -98,10 +98,10 @@
 #define GPIO_VDD_USB_VALID           (GPIO_INPUT|GPIO_PULLUP|GPIO_PORTB|GPIO_PIN12)
 
 /* Tone alarm output. */
-#define TONE_ALARM_TIMER             2    /* timer 2 */
-#define TONE_ALARM_CHANNEL           1    /* channel 1 */
-#define GPIO_TONE_ALARM_IDLE         (GPIO_OUTPUT|GPIO_PUSHPULL|GPIO_SPEED_2MHz|GPIO_OUTPUT_CLEAR|GPIO_PORTA|GPIO_PIN15)
-#define GPIO_TONE_ALARM              (GPIO_ALT|GPIO_AF1|GPIO_SPEED_2MHz|GPIO_PUSHPULL|GPIO_PORTA|GPIO_PIN15)
+//#define TONE_ALARM_TIMER             2    /* timer 2 */
+//#define TONE_ALARM_CHANNEL           1    /* channel 1 */
+//#define GPIO_TONE_ALARM_IDLE         (GPIO_OUTPUT|GPIO_PUSHPULL|GPIO_SPEED_2MHz|GPIO_OUTPUT_CLEAR|GPIO_PORTA|GPIO_PIN15)
+//#define GPIO_TONE_ALARM              (GPIO_ALT|GPIO_AF1|GPIO_SPEED_2MHz|GPIO_PUSHPULL|GPIO_PORTA|GPIO_PIN15)
 
 /**
  * PWM:
@@ -119,10 +119,15 @@
 #define GPIO_OTGFS_VBUS              (GPIO_INPUT|GPIO_FLOAT|GPIO_SPEED_100MHz|GPIO_OPENDRAIN|GPIO_PORTB|GPIO_PIN12)
 
 /* High-resolution timer */
-#define HRT_TIMER                    4  /* use timer 4 for the HRT */
-#define HRT_TIMER_CHANNEL            2  /* use capture/compare channel 2 */
+#define HRT_TIMER                    3  /* use timer 3 for the HRT */
+#define HRT_TIMER_CHANNEL            4  /* use capture/compare channel 4 */
 
-#define HRT_PPM_CHANNEL              2  /* use capture/compare channel 2 */
+#define HRT_PPM_CHANNEL              3  /* use capture/compare channel 3 */
+//* High-resolution timer */
+//#define HRT_TIMER                    4  /* use timer 4 for the HRT */
+//#define HRT_TIMER_CHANNEL            2  /* use capture/compare channel 2 */
+//
+//#define HRT_PPM_CHANNEL              2  /* use capture/compare channel 2 */
 #define GPIO_PPM_IN                  (GPIO_ALT|GPIO_AF2|GPIO_PULLUP|GPIO_PORTB|GPIO_PIN7)
 
 /* RC Serial port */
@@ -131,7 +136,7 @@
 
 /* PWM input driver. Use FMU AUX5 pins attached to timer4 channel 2. */
 #define PWMIN_TIMER                  4
-#define PWMIN_TIMER_CHANNEL          1
+#define PWMIN_TIMER_CHANNEL          2
 #define GPIO_PWM_IN                  GPIO_TIM4_CH2IN_2
 
 #define GPIO_RSSI_IN                 (GPIO_INPUT|GPIO_PULLUP|GPIO_PORTB|GPIO_PIN2)

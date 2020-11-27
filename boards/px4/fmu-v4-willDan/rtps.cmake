@@ -3,7 +3,7 @@ px4_add_board(
 	PLATFORM nuttx
 	VENDOR px4
 	MODEL fmu-v4
-	LABEL default
+	LABEL rtps
 	TOOLCHAIN arm-none-eabi
 	ARCHITECTURE cortex-m4
 	ROMFSROOT px4fmu_common
@@ -15,7 +15,6 @@ px4_add_board(
 		TEL2:/dev/ttyS2
 	DRIVERS
 		adc/board_adc
-		adc/ads1115
 		barometer # all available barometer drivers
 		batt_smbus
 		camera_capture
@@ -26,7 +25,14 @@ px4_add_board(
 		gps
 		heater
 		#imu # all available imu drivers
-		imu/bosch/bmi088
+		imu/adis16448
+		imu/adis16477
+		imu/adis16497
+		imu/invensense/icm20602
+		imu/invensense/icm20608g
+		imu/invensense/icm40609d
+		imu/invensense/mpu6500
+		imu/invensense/mpu9250
 		irlock
 		lights/blinkm
 		lights/rgbled
@@ -36,8 +42,7 @@ px4_add_board(
 		optical_flow # all available optical flow drivers
 		#osd
 		pca9685
-		pca9685_pwm_out
-		#protocol_splitter
+		protocol_splitter
 		pwm_input
 		pwm_out_sim
 		pwm_out
@@ -57,7 +62,6 @@ px4_add_board(
 		commander
 		dataman
 		ekf2
-		esc_battery
 		events
 		fw_att_control
 		fw_pos_control_l1
@@ -71,7 +75,7 @@ px4_add_board(
 		mc_hover_thrust_estimator
 		mc_pos_control
 		mc_rate_control
-		#micrortps_bridge
+		micrortps_bridge
 		navigator
 		rc_update
 		rover_pos_control
@@ -86,7 +90,6 @@ px4_add_board(
 		#dmesg
 		dumpfile
 		esc_calib
-		gpio
 		hardfault_log
 		i2cdetect
 		led_control
@@ -110,10 +113,7 @@ px4_add_board(
 		ver
 		work_queue
 	EXAMPLES
-		fake_gyro
-		fake_magnetometer
 		fixedwing_control # Tutorial code from https://px4.io/dev/example_fixedwing_control
-		gyro_fft
 		hello
 		hwtest # Hardware test
 		#matlab_csv_serial

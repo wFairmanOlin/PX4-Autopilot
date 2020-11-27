@@ -260,11 +260,11 @@
 #define GPIO_SPI2_MOSI  (GPIO_SPI2_MOSI_1|GPIO_SPEED_50MHz)
 #define GPIO_SPI2_SCK   (GPIO_SPI2_SCK_1|GPIO_SPEED_50MHz)
 
-#if defined(CONFIG_STM32_SPI4)
-#  define GPIO_SPI4_MISO  (GPIO_SPI4_MISO_1|GPIO_SPEED_50MHz)
-#  define GPIO_SPI4_MOSI  (GPIO_SPI4_MOSI_1|GPIO_SPEED_50MHz)
-#  define GPIO_SPI4_SCK   (GPIO_SPI4_SCK_1|GPIO_SPEED_50MHz)
-#endif
+//#if defined(CONFIG_STM32_SPI4)
+//#  define GPIO_SPI4_MISO  (GPIO_SPI4_MISO_1|GPIO_SPEED_50MHz)
+//#  define GPIO_SPI4_MOSI  (GPIO_SPI4_MOSI_1|GPIO_SPEED_50MHz)
+//#  define GPIO_SPI4_SCK   (GPIO_SPI4_SCK_1|GPIO_SPEED_50MHz)
+//#endif
 
 /* Board provides GPIO or other Hardware for signaling to timing analyzer */
 
